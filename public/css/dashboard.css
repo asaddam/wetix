@@ -1,0 +1,64 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-bottom: 0px;
+}
+
+body {
+  background: white;
+  color: rgba(68, 14, 68, 0.533);
+}
+
+.main-content {
+  background: #e8eaed;
+  min-height: 100vh;
+}
+
+.nav-link {
+  color: #000;
+  opacity: 0.7;
+  padding: 1em 0em;
+}
+
+.nav-link:hover {
+  color: #000;
+  opacity: 1;
+}
+
+.nav-link.active {
+  color: #000;
+  opacity: 1;
+  font-weight: bold;
+}
+
+.card-header h2 {
+  font-size: 1.2em;
+  letter-spacing: 1px;
+}
+
+table.table tr th {
+  color: #737380;
+}
+
+table.table tr td {
+  color: #737378;
+  font-size: 0.9em;
+  vertical-align: middle;
+}
+
+.pagination {
+  align-items: center;
+  justify-content: center;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin: 0px;
+}
+
+.icon-menu {
+  margin-right: 0.5em;
+}
+
