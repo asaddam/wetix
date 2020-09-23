@@ -34,6 +34,7 @@ class UserController extends Controller
         // pagination dalam search
         $request = $request->all();
 
+        // ada dua cara pemanggilan url
         return view('dashboard/user/list', [
             'users' => $users,
             'request' => $request,
@@ -106,7 +107,7 @@ class UserController extends Controller
         ]);
 
         if($validator->fails()) {
-            return redirect('dashboard/user/edit/'.$id)
+            return redirect('dashboard/users/'.$id)
                     ->withErrors($validator)
                     ->withInput();
         } else {

@@ -2,7 +2,7 @@
 
     @section('content')
         <div class="mb-2">
-            <a href="{{ route('dashboard.movies.create') }}" class="btn btn-primary-outline">+ Movie</a>
+            <a href="{{ route('dashboard.movies.create') }}" class="btn btn-primary btn-sm">+ Movie</a>
         </div>
         <div class="card">
             <div class="card-header">
@@ -40,12 +40,12 @@
                             <tr>
                                 {{-- iterasi otomatis per page --}}
                                 <th scope="row">{{ ($movies->currentPage() - 1) * $movies->perPage() + $loop->iteration }}</th>
-                                <td>{{ $movie->title }}</td>
-                                <td>
-                                    <img src="{{ asset('storage/movies/'.$movie->thumbnail) }}" >
+                                <td class="col-thumbnail">
+                                    <img src="{{ asset('storage/movies/'.$movie->thumbnail) }}" class="img-fluid" >
                                 </td>
+                                <td><h4><strong>{{ $movie->title }}</strong></h4></td>
                                 {{-- url menggunakan route agar lebih mudah diedit ketika pembaharuan --}}
-                                <td><a href="{{ route('dashboard.movies.edit', ['id' => $movie->id]) }}" title="Edit" class="btn btn-success btn-sm">
+                                <td><a href="{{ route('dashboard.movies.edit', $movie->id) }}" title="Edit" class="btn btn-success btn-sm">
                                     <i class="fas fa-pen"></i>
                                 </a></td>
                             </tr>
