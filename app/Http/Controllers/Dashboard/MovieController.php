@@ -49,7 +49,7 @@ class MovieController extends Controller
             'active' => $active,
             'movie' => null,    
             'button' => 'Create',
-            'url'   => 'dashboard.movies.create'
+            'url'   => 'dashboard.movies.store'
             ]);
     }
 
@@ -83,7 +83,8 @@ class MovieController extends Controller
             $movie->save();
 
             return redirect()
-                    ->route('dashboard.movies');
+                    ->route('dashboard.movies')
+                    ->with('message', 'Data movie berhasil ditambahkan');
         }
     }
 
@@ -154,7 +155,9 @@ class MovieController extends Controller
             $movie->save();
 
             return redirect()
-                    ->route('dashboard.movies');
+                    ->route('dashboard.movies')
+                    ->with('message', 'Data movie berhasil diupdate');
+
         }
     }
 
@@ -168,6 +171,8 @@ class MovieController extends Controller
     {
         $movie->delete();
         return redirect()
-                ->route('dashboard.movies');
+                ->route('dashboard.movies')
+                ->with('message', 'Data movie berhasil dihapus');
+
     }
 }
